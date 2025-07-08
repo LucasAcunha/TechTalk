@@ -1,0 +1,393 @@
+// Estilos para o componente Loja
+.divider-center {
+  width: 80px;
+  height: 3px;
+  background-color: var(--primary);
+  margin: 0 auto;
+}
+
+// Estilos para cards de categorias
+.category-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-10px);
+    
+    .category-image img {
+      transform: scale(1.1);
+    }
+    
+    .category-overlay {
+      opacity: 0.4;
+    }
+    
+    .category-content {
+      background-color: var(--primary);
+      color: white;
+    }
+  }
+  
+  .category-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+    
+    .category-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+  }
+  
+  .category-content {
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+}
+
+// Estilos para filtros
+.shop-filters {
+  .btn-filter {
+    border: 1px solid #dee2e6;
+    background-color: white;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    
+    &:hover, &.active {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+  }
+  
+  .search-box {
+    .form-control:focus {
+      box-shadow: none;
+      border-color: var(--primary);
+    }
+  }
+}
+
+// Estilos para cards de produtos
+.product-card {
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-color: white;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    .product-image img {
+      transform: scale(1.1);
+    }
+  }
+  
+  .product-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 10px;
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    font-size: 0.75rem;
+    border-radius: 5px;
+    z-index: 2;
+    
+    &.sale {
+      background-color: #dc3545;
+    }
+  }
+  
+  .product-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+  }
+    .product-title {
+    font-weight: 600;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 48px;
+  }
+  
+  .product-rating {
+    .fas.fa-star {
+      font-size: 0.8rem;
+      
+      &.text-warning {
+        color: #ffc107;
+      }
+      
+      &.text-secondary {
+        color: #e2e2e2;
+      }
+    }
+  }
+  
+  .product-price {
+    .new-price {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary);
+      
+      &.has-discount {
+        color: #dc3545;
+      }
+    }
+    
+    .old-price {
+      font-size: 0.9rem;
+      color: #6c757d;
+      text-decoration: line-through;
+      margin-left: 8px;
+    }
+  }
+}
+
+// Estilos para carrinho flutuante
+.cart-floating {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  
+  .cart-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+    
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: #dc3545;
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+  }
+  
+  .cart-preview {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    width: 350px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: none;
+    
+    &.active {
+      display: block;
+    }
+    
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .cart-items {
+      max-height: 300px;
+      overflow-y: auto;
+      
+      .cart-item {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+        
+        .cart-item-image {
+          width: 60px;
+          height: 60px;
+          overflow: hidden;
+          border-radius: 5px;
+          margin-right: 15px;
+          
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        
+        .cart-item-details {
+          flex: 1;
+        }
+        
+        .cart-item-remove {
+          background: none;
+          border: none;
+          color: #dc3545;
+          cursor: pointer;
+          font-size: 1rem;
+          padding: 5px;
+            &:hover {
+            color: #bd2130; /* Versão mais escura do #dc3545 */
+          }
+        }
+      }
+    }
+    
+    .cart-footer {
+      padding: 15px;
+      
+      .cart-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+// Estilos para benefícios da loja
+.benefit-card {
+  background-color: white;
+  border-radius: 10px;
+  height: 100%;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    .benefit-icon {
+      transform: scale(1.1);
+    }
+  }
+  
+  .benefit-icon {
+    transition: all 0.3s ease;
+  }
+}
+
+// Estilos para slider de produtos em destaque
+.featured-slider {
+  .swiper-container {
+    padding-bottom: 50px;
+    padding-top: 10px;
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: var(--primary);
+      
+      &::after {
+        font-size: 1.5rem;
+      }
+    }
+    
+    .swiper-pagination-bullet-active {
+      background-color: var(--primary);
+    }
+  }
+}
+
+// Estilos para resultados vazios
+.empty-results {
+  padding: 50px 20px;
+  
+  i {
+    opacity: 0.5;
+  }
+}
+
+// Estilos para as tags figure nos produtos
+figure.product-image {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  height: 250px;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+  }
+  
+  // Hover effect para as imagens dos produtos
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+// Responsividade
+@media (max-width: 767.98px) {
+  .category-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .cart-floating {
+    .cart-preview {
+      width: 300px;
+      right: -70px;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        right: 85px;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        transform: rotate(45deg);
+        z-index: -1;
+      }
+    }
+  }
+}

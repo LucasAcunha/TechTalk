@@ -1,0 +1,168 @@
+// Estilos para o componente Nossa-Missão
+.divider-center {
+  width: 80px;
+  height: 3px;
+  background-color: var(--primary);
+  margin: 0 auto;
+}
+
+// Seção de Hero
+.mission-hero {
+  position: relative;
+  overflow: hidden;
+  
+  .mission-image {
+    transition: all 0.5s ease;
+  }
+  
+  .mission-badge {
+    position: absolute;
+    bottom: 30px;
+    right: -20px;
+    text-align: center;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: mission-badge-appear 1s forwards 0.5s;
+  }
+}
+
+@keyframes mission-badge-appear {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Estilo para os cards da missão
+.mission-card {
+  background-color: #fff;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  height: 100%;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    
+    .mission-icon {
+      transform: scale(1.1);
+    }
+  }
+  
+  .mission-icon {
+    transition: all 0.3s ease;
+  }
+}
+
+// Estilo para os números de visão
+.vision-points {
+  .vision-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba(var(--primary-rgb), 0.1);
+    min-width: 70px;
+    line-height: 1;
+  }
+  
+  .vision-point {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateX(10px);
+    }
+  }
+}
+
+// Estilo para a imagem da visão
+.vision-image-container {
+  overflow: hidden;
+  border-radius: 10px;
+  
+  img {
+    transition: all 0.5s ease;
+  }
+  
+  &:hover img {
+    transform: scale(1.05);
+  }
+  
+  .vision-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.8) 100%);
+    border-radius: 10px;
+  }
+  
+  .vision-quote {
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+// Estatísticas de impacto
+.impact-stat {
+  .impact-number {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+  
+  .impact-label {
+    font-size: 1rem;
+    margin-top: 5px;
+    color: #6c757d;
+  }
+}
+
+// Cards de impacto
+.impact-card {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+  
+  .impact-list {
+    li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+      
+      &::before {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: var(--primary);
+        position: absolute;
+        left: 0;
+        top: 2px;
+      }
+    }
+  }
+}
+
+// Responsividade para dispositivos móveis
+@media (max-width: 767.98px) {
+  .mission-hero .mission-badge {
+    bottom: 15px;
+    right: 15px;
+    transform: scale(0.8);
+    padding: 15px !important;
+  }
+  
+  .impact-stat {
+    margin-bottom: 30px;
+    
+    .impact-number {
+      font-size: 2.5rem;
+    }
+  }
+  
+  .vision-point {
+    margin-bottom: 2rem;
+  }
+}
