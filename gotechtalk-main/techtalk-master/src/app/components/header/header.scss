@@ -1,0 +1,184 @@
+// Estilos para o header responsivo
+.navbar {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 0.375rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(0, 174, 239, 0.2);
+  }
+  
+  &:hover {
+    background-color: rgba(0, 174, 239, 0.05);
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+  }
+  
+  &:not(.collapsed) .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M6 6l18 18M6 24L24 6'/%3e%3c/svg%3e");
+    transform: rotate(180deg);
+  }
+}
+
+.navbar-collapse {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: top;
+  
+  // No desktop, o menu deve estar sempre visível
+  @media (min-width: 992px) {
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  // No mobile, aplicar as transformações
+  @media (max-width: 991.98px) {
+    &:not(.show) {
+      opacity: 0;
+      transform: scaleY(0.8) translateY(-10px);
+    }
+    
+    &.show {
+      display: block !important;
+      opacity: 1;
+      transform: scaleY(1) translateY(0);
+    }
+  }
+}
+
+// Estilos para dispositivos móveis
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    margin-top: 0.25rem;
+    padding: 0.5rem 0 0.25rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    
+    .navbar-nav {
+      .nav-item {
+        margin-bottom: 0.125rem;
+        
+        .nav-link {
+          padding: 0.375rem 0.75rem;
+          border-radius: 0.375rem;
+          font-size: 0.9rem;
+          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+          
+          &:hover,
+          &.active {
+            background-color: rgba(0, 174, 239, 0.08);
+            color: var(--primary-color);
+            transform: translateX(4px);
+          }
+        }
+      }
+    }
+  }
+  
+  // Animação para quando o menu está visível
+  .navbar-collapse.show .nav-item {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInDown 0.3s ease forwards;
+    
+    // Delay escalonado para cada item
+    &:nth-child(1) { animation-delay: 0.1s; }
+    &:nth-child(2) { animation-delay: 0.15s; }
+    &:nth-child(3) { animation-delay: 0.2s; }
+    &:nth-child(4) { animation-delay: 0.25s; }
+    &:nth-child(5) { animation-delay: 0.3s; }
+    &:nth-child(6) { animation-delay: 0.35s; }
+  }
+}
+
+// Estilos para desktop
+@media (min-width: 992px) {
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        padding: 0.5rem 1rem;
+        margin: 0 0.25rem;
+        border-radius: 0.375rem;
+        font-weight: 500;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        
+        &:hover,
+        &.active {
+          background-color: rgba(0, 174, 239, 0.08);
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+}
+
+// Keyframes para animação dos itens do menu
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Animação para o logo
+.navbar-brand {
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+  
+  img {
+    transition: all 0.3s ease;
+  }
+}
+
+// Sticky header com sombra dinâmica
+.sticky-top {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  
+  .navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Melhoria da acessibilidade
+.nav-link {
+  position: relative;
+  
+  &.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background-color: var(--primary-color);
+    border-radius: 1px;
+  }
+}
+
+// Responsividade adicional para telas muito pequenas
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.1rem;
+    
+    img {
+      height: 35px;
+    }
+  }
+}

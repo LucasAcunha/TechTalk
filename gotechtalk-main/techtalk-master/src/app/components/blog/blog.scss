@@ -1,0 +1,98 @@
+// Estilos para o componente Blog
+
+// Banner do blog
+.page-header {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+}
+
+// Cards dos artigos
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+// Imagens dos artigos
+figure {
+  margin: 0;
+  overflow: hidden;
+  
+  img {
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+  
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+// Screen reader only content
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+// Posts populares
+.popular-posts {
+  .d-flex {
+    figure {
+      border-radius: 8px;
+      overflow: hidden;
+      
+      img {
+        transition: opacity 0.3s ease;
+        
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+// Links de artigos
+.btn-link {
+  font-weight: 500;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: #0056b3 !important;
+  }
+}
+
+// Newsletter card
+.bg-primary {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+}
+
+// Badges nas categorias
+.badge {
+  background-color: #007bff !important;
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  .popular-posts {
+    .d-flex {
+      figure {
+        img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+  }
+}

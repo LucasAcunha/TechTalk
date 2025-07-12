@@ -1,0 +1,415 @@
+<section class="contact-hero py-5 bg-light">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <h1 class="display-4 fw-bold text-primary mb-3">Fale Conosco</h1>
+        <p class="lead fs-4 mb-5">Estamos aqui para ajudar. Entre em contato conosco através dos canais abaixo ou preencha o formulário.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-info py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="contact-sidebar">
+          <div class="contact-info-card bg-white shadow-sm rounded-3 p-4 mb-4">
+            <h3 class="fw-bold mb-4">Informações de Contato</h3>
+            
+            <div class="contact-item d-flex align-items-start mb-4">
+              <div class="contact-icon text-primary me-3">
+                <i class="fas fa-map-marker-alt fa-2x"></i>
+              </div>
+              <div>
+                <h5 class="mb-1">Endereço</h5>
+                <p class="mb-0">Av. Paulista, 1000<br>Bela Vista, São Paulo - SP<br>CEP: 01310-100</p>
+              </div>
+            </div>
+            
+            <div class="contact-item d-flex align-items-start mb-4">
+              <div class="contact-icon text-primary me-3">
+                <i class="fas fa-phone fa-2x"></i>
+              </div>
+              <div>
+                <h5 class="mb-1">Telefone</h5>
+                <p class="mb-0">(11) 3000-1000<br>(11) 98765-4321</p>
+              </div>
+            </div>
+            
+            <div class="contact-item d-flex align-items-start mb-4">
+              <div class="contact-icon text-primary me-3">
+                <i class="fas fa-envelope fa-2x"></i>
+              </div>              <div>
+                <h5 class="mb-1">Email</h5>
+                <p class="mb-0">contato&#64;gotechtalk.com.br<br>suporte&#64;gotechtalk.com.br</p>
+              </div>
+            </div>
+            
+            <div class="contact-item d-flex align-items-start">
+              <div class="contact-icon text-primary me-3">
+                <i class="fas fa-clock fa-2x"></i>
+              </div>
+              <div>
+                <h5 class="mb-1">Horário de Atendimento</h5>
+                <p class="mb-0">Segunda a Sexta: 8h às 18h<br>Sábado: 9h às 13h</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="social-card bg-white shadow-sm rounded-3 p-4 mb-4">
+            <h3 class="fw-bold mb-3">Redes Sociais</h3>
+            <p class="mb-4">Siga-nos nas redes sociais e fique por dentro das novidades!</p>            <div class="social-links d-flex gap-3">
+              <a href="https://facebook.com/gotechtalk" target="_blank" class="social-link facebook" title="Facebook Go Tech Talk">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                <span class="visually-hidden">Facebook</span>
+              </a>
+              <a href="https://instagram.com/gotechtalk" target="_blank" class="social-link instagram" title="Instagram Go Tech Talk">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+                <span class="visually-hidden">Instagram</span>
+              </a>
+              <a href="https://youtube.com/c/gotechtalk" target="_blank" class="social-link youtube" title="Canal do YouTube Go Tech Talk">
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+                <span class="visually-hidden">YouTube</span>
+              </a>
+              <a href="https://linkedin.com/company/gotechtalk" target="_blank" class="social-link linkedin" title="LinkedIn Go Tech Talk">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                <span class="visually-hidden">LinkedIn</span>
+              </a>
+              <a href="https://wa.me/5511999999999" target="_blank" class="social-link whatsapp" title="WhatsApp Go Tech Talk">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                <span class="visually-hidden">WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-8">
+        <div class="contact-form-container bg-white shadow-sm rounded-3 p-4 p-md-5">
+          <h3 class="fw-bold mb-4">Envie uma Mensagem</h3>
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="nameInput" placeholder="Seu nome" formControlName="name">
+                  <label for="nameInput">Nome completo</label>
+                  <div *ngIf="formSubmitted && f['name'].errors" class="text-danger mt-1 small">
+                    <span *ngIf="f['name'].errors['required']">Nome é obrigatório</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="emailInput" placeholder="Seu email" formControlName="email">
+                  <label for="emailInput">Email</label>
+                  <div *ngIf="formSubmitted && f['email'].errors" class="text-danger mt-1 small">
+                    <span *ngIf="f['email'].errors['required']">Email é obrigatório</span>
+                    <span *ngIf="f['email'].errors['email']">Email inválido</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="form-floating mb-3">
+                  <input type="tel" class="form-control" id="phoneInput" placeholder="Seu telefone" formControlName="phone">
+                  <label for="phoneInput">Telefone</label>
+                  <div *ngIf="formSubmitted && f['phone'].errors" class="text-danger mt-1 small">
+                    <span *ngIf="f['phone'].errors['required']">Telefone é obrigatório</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="form-floating mb-3">
+                  <select class="form-select" id="subjectSelect" formControlName="subject">
+                    <option value="" selected disabled>Selecione um assunto</option>
+                    <option value="Dúvida sobre cursos">Dúvida sobre cursos</option>
+                    <option value="Suporte técnico">Suporte técnico</option>
+                    <option value="Parcerias">Parcerias</option>
+                    <option value="Outros">Outros</option>
+                  </select>
+                  <label for="subjectSelect">Assunto</label>
+                  <div *ngIf="formSubmitted && f['subject'].errors" class="text-danger mt-1 small">
+                    <span *ngIf="f['subject'].errors['required']">Assunto é obrigatório</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-12">                <div class="form-floating mb-3">
+                  <textarea class="form-control message-textarea" id="messageInput" placeholder="Sua mensagem" formControlName="message"></textarea>
+                  <label for="messageInput">Mensagem</label>
+                  <div *ngIf="formSubmitted && f['message'].errors" class="text-danger mt-1 small">
+                    <span *ngIf="f['message'].errors['required']">Mensagem é obrigatória</span>
+                    <span *ngIf="f['message'].errors['minlength']">Mensagem deve ter pelo menos 20 caracteres</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-12">
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" id="termsCheck" formControlName="terms">
+                  <label class="form-check-label" for="termsCheck">
+                    Concordo com os <a href="#">termos de uso</a> e <a href="#">política de privacidade</a>
+                  </label>
+                  <div *ngIf="formSubmitted && f['terms'].errors" class="text-danger mt-1 small">
+                    <span *ngIf="f['terms'].errors['requiredTrue']">Você precisa concordar com os termos</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-12">
+                <div class="alert alert-success" *ngIf="formSuccess">
+                  <i class="fas fa-check-circle me-2"></i> Sua mensagem foi enviada com sucesso! Retornaremos em breve.
+                </div>
+                <div class="alert alert-danger" *ngIf="formError">
+                  <i class="fas fa-exclamation-circle me-2"></i> Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.
+                </div>
+              </div>
+              
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-lg px-5" [disabled]="isSubmitting">
+                  <span *ngIf="!isSubmitting">Enviar Mensagem</span>
+                  <span *ngIf="isSubmitting">
+                    <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                    Enviando...
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="map-section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12">        <div class="map-container shadow-sm rounded-3 overflow-hidden">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0995772666156!2d-46.6560841253487!3d-23.564611178869516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c7f481fd9f%3A0x9982bfde4df54830!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1718224039769!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="Localização da Go Tech Talk na Avenida Paulista, 1000"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section py-5 bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <h2 class="fw-bold mb-4">Perguntas Frequentes</h2>
+        <div class="divider-center mb-4"></div>
+        <p class="lead">Separamos algumas dúvidas comuns para te ajudar. Se não encontrar o que procura, entre em contato conosco!</p>
+        <div class="search-box mb-4">
+          <input type="text" class="form-control" placeholder="Buscar pergunta..." (input)="filterFAQs($event)">
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="accordion" id="faqAccordionContato">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="contatoHeadingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#contatoCollapseOne" aria-expanded="true" aria-controls="contatoCollapseOne">
+                Como funcionam as aulas online?
+              </button>
+            </h2>
+            <div id="contatoCollapseOne" class="accordion-collapse collapse show" aria-labelledby="contatoHeadingOne" data-bs-parent="#faqAccordionContato">
+              <div class="accordion-body">
+                Nossas aulas são realizadas ao vivo através da plataforma Zoom, com professores especializados em ensino para o público sênior. 
+                <ul class="mt-3">
+                  <li>Aulas ao vivo com interação em tempo real</li>
+                  <li>Material didático disponível para download</li>
+                  <li>Gravações disponíveis por 30 dias</li>
+                  <li>Suporte técnico antes e durante as aulas</li>
+                </ul>
+                <div class="mt-3">
+                  <a href="/planos-precos" class="btn btn-primary btn-sm">Ver Planos de Aula</a>
+                  <button class="btn btn-outline-primary btn-sm ms-2" onclick="window.open('https://calendly.com/gotechtalk/aula-experimental')">Agendar Aula Experimental</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="contatoHeadingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#contatoCollapseTwo" aria-expanded="false" aria-controls="contatoCollapseTwo">
+                Preciso ter conhecimento prévio para fazer os cursos?
+              </button>
+            </h2>
+            <div id="contatoCollapseTwo" class="accordion-collapse collapse" aria-labelledby="contatoHeadingTwo" data-bs-parent="#faqAccordionContato">
+              <div class="accordion-body">
+                Não, nossos cursos são estruturados para atender desde o público iniciante até níveis mais avançados.
+                <ul class="mt-3">
+                  <li>Avaliação inicial gratuita do seu nível</li>
+                  <li>Turmas separadas por nível de conhecimento</li>
+                  <li>Material adaptativo que evolui com você</li>
+                  <li>Monitoria extra para alunos iniciantes</li>
+                </ul>
+                <div class="mt-3">
+                  <a href="/blog/guia-iniciantes" class="btn btn-info btn-sm">Ler Guia para Iniciantes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="contatoHeadingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#contatoCollapseThree" aria-expanded="false" aria-controls="contatoCollapseThree">
+                Qual aparelho preciso ter para participar?
+              </button>
+            </h2>
+            <div id="contatoCollapseThree" class="accordion-collapse collapse" aria-labelledby="contatoHeadingThree" data-bs-parent="#faqAccordionContato">
+              <div class="accordion-body">
+                <p>Você pode participar usando qualquer um destes dispositivos:</p>
+                <div class="device-requirements mt-3">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h5><i class="fas fa-laptop me-2"></i>Computador/Notebook</h5>
+                      <ul>
+                        <li>Windows 8 ou superior</li>
+                        <li>macOS 10.13 ou superior</li>
+                        <li>4GB de RAM (mínimo)</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6">
+                      <h5><i class="fas fa-tablet-alt me-2"></i>Tablet/Smartphone</h5>
+                      <ul>
+                        <li>Android 8.0 ou superior</li>
+                        <li>iOS 12 ou superior</li>
+                        <li>2GB de RAM (mínimo)</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <a href="/suporte/verificar-dispositivo" class="btn btn-success btn-sm">Verificar Compatibilidade</a>
+                  <a href="/loja" class="btn btn-outline-primary btn-sm ms-2">Ver Equipamentos Recomendados</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="contatoHeadingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#contatoCollapseFour" aria-expanded="false" aria-controls="contatoCollapseFour">
+                Como funciona o suporte técnico?
+              </button>
+            </h2>
+            <div id="contatoCollapseFour" class="accordion-collapse collapse" aria-labelledby="contatoHeadingFour" data-bs-parent="#faqAccordionContato">
+              <div class="accordion-body">
+                <div class="support-channels">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="support-card p-3 border rounded">
+                        <h5 class="mb-3"><i class="fas fa-clock me-2 text-primary"></i>Horário de Atendimento</h5>
+                        <p class="mb-2">Segunda a Sexta: 8h às 18h</p>
+                        <p>Sábado: 9h às 13h</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="support-card p-3 border rounded">
+                        <h5 class="mb-3"><i class="fas fa-hands-helping me-2 text-primary"></i>Canais de Suporte</h5>
+                        <ul class="list-unstyled mb-0">
+                          <li><i class="fas fa-phone-alt me-2"></i>(11) 3000-1000</li>
+                          <li><i class="fab fa-whatsapp me-2"></i><a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a></li>
+                          <li><i class="fas fa-envelope me-2"></i>suporte&#64;gotechtalk.com.br</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <a href="https://suporte.gotechtalk.com.br" target="_blank" class="btn btn-primary btn-sm">Acessar Portal de Suporte</a>
+                  <button class="btn btn-success btn-sm ms-2" onclick="window.open('https://wa.me/5511999999999')">Chamar no WhatsApp</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="contatoHeadingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#contatoCollapseFive" aria-expanded="false" aria-controls="contatoCollapseFive">
+                Como funciona o cancelamento e reembolso?
+              </button>
+            </h2>
+            <div id="contatoCollapseFive" class="accordion-collapse collapse" aria-labelledby="contatoHeadingFive" data-bs-parent="#faqAccordionContato">
+              <div class="accordion-body">
+                <div class="cancellation-info">
+                  <h5 class="mb-3">Política de Cancelamento</h5>
+                  <ul>
+                    <li>Planos mensais: cancele a qualquer momento sem multa</li>
+                    <li>Planos anuais: reembolso proporcional aos meses não utilizados</li>
+                    <li>Período de teste: 7 dias de garantia de satisfação</li>
+                    <li>Aulas avulsas: cancelamento com até 24h de antecedência</li>
+                  </ul>
+                  <div class="alert alert-info mt-3">
+                    <i class="fas fa-info-circle me-2"></i>
+                    Todos os reembolsos são processados em até 5 dias úteis após a solicitação.
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <a href="/minha-conta/cancelamento" class="btn btn-danger btn-sm">Solicitar Cancelamento</a>
+                  <a href="/termos-uso#cancelamento" class="btn btn-outline-secondary btn-sm ms-2">Ver Política Completa</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="contatoHeadingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#contatoCollapseSix" aria-expanded="false" aria-controls="contatoCollapseSix">
+                Ainda tem dúvidas?
+              </button>
+            </h2>
+            <div id="contatoCollapseSix" class="accordion-collapse collapse" aria-labelledby="contatoHeadingSix" data-bs-parent="#faqAccordionContato">
+              <div class="accordion-body text-center">
+                <p class="mb-4">Nossa equipe está pronta para ajudar! Escolha a melhor forma de contato:</p>
+                <div class="row g-3 justify-content-center">
+                  <div class="col-md-4">
+                    <a href="https://wa.me/5511999999999" target="_blank" class="btn btn-success btn-lg w-100">
+                      <i class="fab fa-whatsapp me-2"></i> WhatsApp
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="tel:1130001000" class="btn btn-primary btn-lg w-100">
+                      <i class="fas fa-phone-alt me-2"></i> Ligar
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="mailto:contato&#64;gotechtalk.com.br" class="btn btn-info btn-lg w-100">
+                      <i class="fas fa-envelope me-2"></i> Email
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-contact py-5 bg-primary text-white text-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="fw-bold mb-4">Atendimento Personalizado</h2>
+        <p class="lead mb-4">Prefere falar diretamente com um de nossos consultores? Estamos prontos para te atender!</p>
+        <div class="cta-buttons d-flex flex-column flex-sm-row justify-content-center gap-3">
+          <a href="tel:+551130001000" class="btn btn-light btn-lg fw-bold px-4 py-3">
+            <i class="fas fa-phone me-2"></i> (11) 3000-1000
+          </a>
+          <a href="https://wa.me/5511987654321" class="btn btn-success btn-lg fw-bold px-4 py-3">
+            <i class="fab fa-whatsapp me-2"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

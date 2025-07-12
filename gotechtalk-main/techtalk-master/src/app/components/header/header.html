@@ -1,0 +1,65 @@
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" routerLink="/" (click)="closeMobileMenu()">
+        <img src="assets/logo.avif" alt="Go Tech Talk Logo" height="40" class="me-2">
+        <span class="fw-bold text-primary">Go Tech Talk</span>
+      </a>
+      
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        [class.collapsed]="!isMenuOpen"
+        [attr.aria-expanded]="isMenuOpen"
+        aria-controls="navbarNav" 
+        aria-label="Toggle navigation"
+        (click)="toggleMobileMenu()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" 
+           [class.show]="isMenuOpen" 
+           id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" 
+               routerLink="/" 
+               routerLinkActive="active" 
+               [routerLinkActiveOptions]="{exact: true}"
+               (click)="closeMobileMenu()">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" 
+               routerLink="/blog" 
+               routerLinkActive="active"
+               (click)="closeMobileMenu()">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" 
+               routerLink="/planos-precos" 
+               routerLinkActive="active"
+               (click)="closeMobileMenu()">Planos e Preços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" 
+               routerLink="/loja" 
+               routerLinkActive="active"
+               (click)="closeMobileMenu()">Loja</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" 
+               routerLink="/eventos" 
+               routerLinkActive="active"
+               (click)="closeMobileMenu()">Eventos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" 
+               routerLink="/contato" 
+               routerLinkActive="active"
+               (click)="closeMobileMenu()">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

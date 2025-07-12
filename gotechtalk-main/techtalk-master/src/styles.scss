@@ -1,0 +1,135 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importações de bibliotecas externas */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+@import 'animate.css/animate.min.css';
+/* O Swiper será importado dinamicamente quando necessário */
+
+:root {
+  --primary-color: #00aeef; /* Azul original do TechTalk */
+  --secondary-color: #2c3e50;
+  --accent-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --text-color: #333333;
+  --text-muted: #666666;
+  --link-color: #0098d4;
+  --link-hover: #007bb0;
+  --background-light: #f8f9fa;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+/* Estilos Globais */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-sans-serif);
+  line-height: 1.6;
+  color: var(--text-color);
+  font-size: 15px; /* Base font size reduzido */
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: var(--link-color);
+
+  &:hover {
+    color: var(--link-hover);
+  }
+}
+
+/* Tipografia acessível para sênior */
+.lead {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.nav-link {
+  font-size: 1rem;
+  padding: 0.6rem 0.9rem;
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+}
+
+/* Media queries para texto responsivo */
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  
+  .lead {
+    font-size: 1.2rem;
+  }
+  
+  .nav-link {
+    font-size: 1.1rem;
+  }
+  
+  .btn {
+    font-size: 1.1rem;
+  }
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 50px 0;
+  }
+}
+
+/* Animações */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* Mobile-first approach */
+/* Estes estilos são aplicados para dispositivos móveis por padrão */
+/* Para tablets */
+@media (min-width: 768px) {
+  /* Estilos específicos para tablets */
+}
+
+/* Para desktops */
+@media (min-width: 992px) {
+  /* Estilos específicos para desktops */
+}
+
+/* Para telas grandes */
+@media (min-width: 1200px) {
+  /* Estilos específicos para telas grandes */
+}

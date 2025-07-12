@@ -1,0 +1,37 @@
+.divider {
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-color);
+  margin: 0 auto;
+}
+
+.feature-icon {
+  color: var(--primary-color);
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+.contact-info {
+  .icon {
+    width: 40px;
+  }
+}
+
+// Hero Section Animation
+.hero-section {
+  overflow: hidden;
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  .min-vh-75 {
+    min-height: 50vh;
+  }
+}

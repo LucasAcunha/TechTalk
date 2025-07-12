@@ -1,0 +1,78 @@
+// Estilos para os cartões de preços
+.price-card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  position: relative;
+  
+  &:hover {
+    transform: translateY(-10px);
+  }
+
+  // Cartão popular/destacado
+  &.popular {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.05);
+    z-index: 1;
+
+    &:hover {
+      transform: scale(1.05) translateY(-10px);
+    }
+  }
+  
+  .card-header, .card-footer {
+    position: relative;
+  }
+
+  // Badge de destaque
+  .price-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  // Preço
+  .price-value {
+    padding: 10px 0;
+  }
+  
+  // Recursos do plano
+  .price-features {
+    li {
+      padding: 8px 0;
+    }
+  }
+}
+
+// Estilos para o FAQ
+.accordion-item {
+  border-radius: 8px;
+  overflow: hidden;
+  
+  .accordion-button {
+    font-weight: 500;
+    
+    &:not(.collapsed) {
+      background-color: var(--primary-color);
+      color: white;
+      box-shadow: none;
+    }
+    
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+// Responsivo
+@media (max-width: 992px) {
+  .price-card.popular {
+    transform: scale(1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
+}
